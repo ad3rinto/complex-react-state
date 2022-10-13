@@ -8,30 +8,32 @@ function App() {
  
 
   function handleChange(event){
-     firstName = event.target.value;
+     const fName = event.target.value;
+     setfirstName(fName)
    
 
   };
 
   function handleChange2(event){
-    lastName = event.target.value;
+    const lName = event.target.value;
+    setLastName(lName)
 
   };
 
-  function handleClick(){
+  // function handleClick(){
     
-    setfirstName(firstName)
-    setLastName(lastName)
+  //   setfirstName(lName)
+  //   setLastName(lastName)
    
-  };
+  // };
 
   return (
     <div className="container">
       <h1>Hello {firstName} {lastName}</h1>
-      <form>
-        <input onChange={handleChange} name="fName" placeholder="First Name" />
-        <input onChange={handleChange2} name="lName" placeholder="Last Name" />
-        <button onClick={handleClick}>Submit</button>
+      <form >
+        <input onChange={handleChange} name="fName" placeholder="First Name" value={firstName}/>
+        <input onChange={handleChange2} name="lName" placeholder="Last Name" value={lastName}/>
+        <button>Submit</button>
       </form>
     </div>
   );
